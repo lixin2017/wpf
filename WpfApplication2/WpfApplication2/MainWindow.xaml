@@ -1,0 +1,52 @@
+﻿<Window x:Class="WpfApplication2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:WpfApplication2"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid Name="grid1">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Label HorizontalAlignment="Center" VerticalAlignment="Center">资源支持</Label>
+        <Button Grid.Column="1" Grid.Row="0" Margin="15" Name="resourceBtn" Background="{DynamicResource MyBrush}">金色按钮</Button>
+        
+        <Label HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Grid.Column="2">样式支持</Label>
+        <Button Grid.Column="3" Grid.Row="0" Margin="15" Name="styleBtn" Style="{StaticResource GreenButtonStyle}">绿色按钮</Button>
+
+        <Label HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Grid.Column="0">动画支持</Label>
+        <Button Grid.Row="1" Grid.Column="1" Margin="15" Name="antimationBtn">
+            <Button.Background>
+                <SolidColorBrush x:Name="AnimBrush" />
+            </Button.Background>
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="Button.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation Storyboard.TargetName="AnimBrush" Storyboard.TargetProperty="(SolidColorBrush.Color)" From="Red" To="Green" Duration="0:0:5" AutoReverse="True" RepeatBehavior="Forever" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Button.Triggers>
+            动画按钮</Button>
+
+        <Label HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Grid.Column="2">数据绑定支持</Label>
+        <Button Grid.Row="1" Grid.Column="3" Margin="15" Name="BindingBtn" Background="{Binding Source={StaticResource MyDataSource},Path=ColorName}">我被绑定成红色</Button>
+
+        <Label HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.Column="0">属性继承支持</Label>
+        <Button Grid.Row="2" Grid.Column="1" Margin="15" Name="FontSizeWinBtn" Click="FontSizeWinBtn_Click">设置窗口字体:16</Button>
+        <Button Grid.Row="2" Grid.Column="2" Margin="15" Name="FontSizeBtn" Click="FontSizeBtn_Click">设置按钮字体:8</Button>
+        <Button Grid.Row="2" Grid.Column="3" Margin="15" Name="ResetFontSizeBtn" Click="ResetFontSizeBtn_Click">重置字体</Button>
+
+        <local:SpaceButton Grid.Row="3" Grid.Column="0" x:Name="btnSpace" Margin="15" Text="设置按钮&#13;字符空格：2" Click="btnSpace_Click"></local:SpaceButton>
+        <local:SpaceButton Grid.Row="3" Grid.Column="1" x:Name="winSpace" Margin="15" Text="设置窗口&#13;字符空格：2" Click="winSpace_Click"></local:SpaceButton>
+    </Grid>
+</Window>
