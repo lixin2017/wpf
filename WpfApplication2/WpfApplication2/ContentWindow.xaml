@@ -1,0 +1,47 @@
+﻿<Window x:Class="WpfApplication2.ContentWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="ContentWindow" Height="Auto" Width="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Margin="5">
+            <Label Target="{Binding ElementName=TxtA}">Choose _A</Label>
+            <TextBox Name="TxtA"></TextBox>
+            <Label Target="{Binding ElementName=TxtB}">Choose _B</Label>
+            <TextBox Name="TxtB"></TextBox>
+            <TextBlock Name="TextBlock1" VerticalAlignment="Center" HorizontalAlignment="Center">1</TextBlock>
+            <RepeatButton Click="ButtonBase_OnClick">repeatButton</RepeatButton>
+            <CheckBox Name="CheckBox" Margin="10" HorizontalAlignment="Center"></CheckBox>
+            <GroupBox Margin="5">
+                <StackPanel>
+                    <RadioButton>Group1</RadioButton>
+                    <RadioButton>Group1</RadioButton>
+                    <RadioButton>Group1</RadioButton>
+                    <RadioButton Margin="0,10,0,0" GroupName="Group2">Group2</RadioButton>
+                </StackPanel>
+            </GroupBox>
+        </StackPanel>
+        <StackPanel Grid.Row="1" ToolTip="StackPanel tooltip" Margin="5">
+            <Button ToolTip="This is my ToolTip" ToolTipService.InitialShowDelay="5000">I have a ToolTip</Button>
+            <Button ToolTipService.InitialShowDelay="0" ToolTipService.BetweenShowDelay="5000">
+                <Button.ToolTip>
+                    <ToolTip Background="#60AA4030" Foreground="White" HasDropShadow="False">
+                        <StackPanel>
+                            <TextBlock Margin="3">Image and text</TextBlock>
+                            <Image Source="Images/示例图片.bmp" Stretch="None"></Image>
+                            <TextBlock Margin="3">Image and text</TextBlock>
+                        </StackPanel>
+                    </ToolTip>
+                </Button.ToolTip>
+                I have a fancy ToolTip
+            </Button>
+            <Button ToolTip="This is my ToolTip" ToolTipService.Placement="Bottom">Placement Test</Button>
+            <Button Padding="50">Does nothing</Button>
+            <TextBox TextWrapping="Wrap" MinLines="2" AutoWordSelection="True"></TextBox>
+        </StackPanel>
+    </Grid>
+    
+</Window>

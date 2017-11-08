@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-E:\Project\WpfApplication2\WpfApplication2\obj\Debug\
+E:\GitHub\Practice\WpfApplication2\WpfApplication2\obj\Debug\
 WpfApplication2
 none
 false
 DEBUG;TRACE
-E:\Project\WpfApplication2\WpfApplication2\App.xaml
-11151548125
+E:\GitHub\Practice\WpfApplication2\WpfApplication2\App.xaml
+9-758440055
 
-7177635464
+15-369221989
 12-1401562060
-MainWindow.xaml;
+ContentWindow.xaml;HeaderedContentWindow.xaml;ItemsWindow.xaml;MainWindow.xaml;NonRectangularWindow.xaml;Notepad.xaml;Page1.xaml;Page2.xaml;UriWindow.xaml;
 
 False
 
